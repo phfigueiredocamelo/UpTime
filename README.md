@@ -17,19 +17,22 @@ The project main objective is to create a app based on test rules:
 * NPM
 
 ## Testing
-* Run `npm i` and then `jest`
+* Run `npm i` and then `npm run test`
 
 ## Running
 Execute in order the following commands under root directory:
-`npm i` , `docker-compose build` and `docker-compose up`
+`npm i` (if don't yet) , `docker-compose build` and `docker-compose up`
+Once averything is up go to play!
 
 ## Play
-The main object here is to provide a way to date a Dungeon for two entities (Curandeiras e Guerreiros). Once you have created a Curandeira you can call for available time slots. After that you can create a Guerreiro and than call endpoint Agendamentos to finally date a Dungeon given entities "id's", date and time slot option.
+The main object here is to provide a way to date a Dungeon for two entities (Curandeira e Guerreiro). Once you have created a Curandeira you can call for available time slots. After that you can create a Guerreiro and than call endpoint Agendamentos to finally date a Dungeon given entities "id's", date and time slot option.
 
 All endpoint calls is described below in order as CURL for convenience:
 
+> Don't forget `apelidoGuerreiro`, `apelidoCurandeira` and an available option (a period) to give those for to create a Doungeon
+
 ### Create Curandeira
-`onlineEntre`: describe a period witch Curandeira will be online every day. This example is 8:30 until 12:30.
+`onlineEntre`: describes a period witch Curandeira will be online every day. This example is 8:30 until 12:30.
 ```
 curl --location --request POST 'localhost:3000/curandeiras' \
 --header 'Content-Type: application/json' \
